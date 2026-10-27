@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avatar con LiveKit</title><link rel="stylesheet" href="/style.css">
+  <script src="https://unpkg.com/livekit-client@2.23.0/dist/livekit-client.umd.js"
+    integrity="sha384-HkA7rQNo8H04l1p4zoXX1Cy+h9YoYp8LvKt4vfMFhv4KFk07UkrNwIUnyBum8Pw6" crossorigin="anonymous" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body><a class="skip" href="#controls">Ir a los controles</a><main>
+  <header><h1>Avatar con LiveKit</h1><p>El mismo agente de LangGraph, con voz ElevenLabs y vídeo Tavus. Sin publicar el backend.</p></header>
+  <section id="unlock"><h2>Acceso del operador</h2><form id="unlock-form">
+    <label for="owner-key">Clave de control</label><input id="owner-key" type="password" autocomplete="off" maxlength="256" required>
+    <button type="submit">Abrir controles</button></form></section>
+  <section id="controls" hidden><div class="session-heading"><h2>Prueba de conversación</h2><strong id="state" role="status">Preparado</strong></div>
+    <p id="detail">No se crea ninguna sala al abrir esta página.</p><p id="diagnostic" role="status" hidden></p><p id="budget" class="quiet"></p>
+    <label class="consent"><input id="consent" type="checkbox">Autorizo una única prueba de hasta 100 segundos con mis créditos existentes.</label>
+    <div class="actions"><button id="start" disabled>Iniciar prueba</button><button id="join" hidden>Unirse a la sala</button><button id="stop" disabled>Finalizar sesión</button></div>
+    <div id="stage"><p id="empty">El vídeo aparecerá cuando el avatar autorizado se una y publique sus medios.</p>
+      <video id="remote-video" aria-label="Vídeo del avatar" autoplay playsinline muted hidden></video><audio id="remote-audio" autoplay></audio></div>
+    <div class="actions"><button id="sound" hidden>Activar sonido</button><button id="microphone" disabled>Activar mi micrófono</button></div>
+    <p id="room-status" role="status">Cámara desactivada. El micrófono solo se adquiere con su botón.</p>
+    <form id="message-form"><label for="message">Pregunta escrita al mismo agente</label>
+      <input id="message" type="text" maxlength="2000" autocomplete="off" disabled><button id="send" disabled>Enviar pregunta</button></form>
+    <p class="quiet">No se guardan audio ni transcripciones locales. Los proveedores pueden aplicar su propia retención. Una respuesta completada no confirma que el vídeo y el audio se hayan reproducido.</p>
+  </section><p id="error" role="alert" hidden></p>
+</main></body></html>

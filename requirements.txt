@@ -1,0 +1,15 @@
+fastapi==0.161.1
+uvicorn==0.54.0
+langgraph==1.2.16
+langchain-google-genai==4.4.2
+langchain-core==1.7.0
+pydantic==2.14.1
+python-dotenv==1.2.4
+httpx==0.28.1
+psycopg[binary]==3.3.4
+cryptography==50.0.2
+livekit-agents==1.8.9
+livekit-plugins-tavus==1.8.9
+livekit-plugins-elevenlabs==1.8.9
+livekit==1.1.21
+livekit-api==1.2.2
